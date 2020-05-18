@@ -26,3 +26,39 @@ summary1 = pd.DataFrame({
 })
 
 print(summary1)
+
+# 시리즈의 연산
+# 시리즈를 서로 연산하여 새로운 시리즈를 만들 수 있음
+
+word_dict2 = {
+    'Apple': '사과',
+    'Strawberry': '딸기',
+    'Banana': '바나나'
+}
+
+frequency_dict2 = {
+    'Apple': 3,
+    'Strawberry': 7,
+    'Banana': 5
+}
+
+importance_dict = {
+    'Apple': 5,
+    'Strawberry': 3,
+    'Banana': 1
+}
+
+word2 = pd.Series(word_dict2)
+frequency2 = pd.Series(frequency_dict2)
+importance = pd.Series(importance_dict)
+
+summary2 = pd.DataFrame({
+    'word': word2,
+    'frequency': frequency2,
+    'importance': importance
+})
+
+score = summary2['frequency'] * summary2['importance']
+summary2['score'] = score
+
+print(summary2)
