@@ -105,3 +105,46 @@ print(summary3.loc['Strawberry':'Banana', 'importance':])
 
 # 인덱스를 기준으로 슬라이싱
 print(summary3.iloc[1:3, 2:])
+
+# 데이터 프레임의 연산
+
+word_dict4 = {
+    'Apple': '사과',
+    'Strawberry': '딸기',
+    'Banana': '바나나',
+    'Grape': '포도'
+}
+
+frequency_dict4 = {
+    'Apple': 3,
+    'Strawberry': 7,
+    'Banana': 5,
+    'Grape': 1
+}
+
+importance_dict3 = {
+    'Apple': 5,
+    'Strawberry': 3,
+    'Banana': 1,
+    'Grape': 2
+}
+
+word4 = pd.Series(word_dict4)
+frequency4 = pd.Series(frequency_dict4)
+importance3 = pd.Series(importance_dict3)
+
+summary4 = pd.DataFrame({
+    'word': word4,
+    'frequency': frequency4,
+    'importance': importance3
+})
+
+print(summary4)
+
+# 데이터의 변경
+summary4.loc['Apple', 'importance'] = 7
+
+# 새 데이터 삽입
+summary4.loc['Blueberry'] = ['블루베리', 2, 6]
+
+print(summary4)
